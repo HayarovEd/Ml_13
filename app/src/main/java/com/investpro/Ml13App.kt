@@ -1,6 +1,9 @@
 package com.investpro
 
 import android.app.Application
+import com.investpro.data.APP_METRICA
+import com.investpro.data.MY_TRACKER
+import com.investpro.data.USER_X
 import com.my.tracker.MyTracker
 import com.yandex.metrica.YandexMetrica
 import com.yandex.metrica.YandexMetricaConfig
