@@ -31,6 +31,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
@@ -89,7 +90,8 @@ fun OfferScreen(
                             )
                         }) {
                             Icon(
-                                imageVector = ImageVector.vectorResource(id = R.drawable.arrow_left),
+                                modifier = modifier.rotate(180f),
+                                imageVector = ImageVector.vectorResource(id = R.drawable.left_arrow3),
                                 tint = blue,
                                 contentDescription = ""
                             )
@@ -184,8 +186,8 @@ fun OfferScreen(
             modifier = modifier
                 .padding(paddingValues)
                 .verticalScroll(rememberScrollState())
-                .fillMaxSize()
-                .shadow(elevation = 10.dp, spotColor = grey, ambientColor = grey)
+                .padding(16.dp)
+                .shadow(elevation = 10.dp, spotColor = grey, ambientColor = grey, shape = RoundedCornerShape(20.dp))
                 .background(color = baseBackground)
                 .clip(shape = RoundedCornerShape(20.dp))
                 .background(color = lightGrey)

@@ -39,6 +39,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.vectorResource
@@ -100,7 +101,8 @@ fun WebViewScreen(
                             onEvent(MainEvent.Reconnect)
                         }) {
                             Icon(
-                                imageVector = ImageVector.vectorResource(id = R.drawable.arrow_left),
+                                modifier = modifier.rotate(180f),
+                                imageVector = ImageVector.vectorResource(id = R.drawable.left_arrow3),
                                 tint = blue,
                                 contentDescription = ""
                             )
