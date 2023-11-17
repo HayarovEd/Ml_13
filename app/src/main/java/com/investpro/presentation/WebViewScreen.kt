@@ -1,4 +1,4 @@
-package com.budgetwise.financial.presentation
+package com.investpro.presentation
 
 import android.content.Context
 import android.content.Intent
@@ -48,10 +48,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.FileProvider
-import com.budgetwise.financial.R
-import com.budgetwise.financial.ui.theme.baseBackground
-import com.budgetwise.financial.ui.theme.secondText
-import com.budgetwise.financial.ui.theme.white
+import com.investpro.R
+import com.budgetwise.financial.presentation.MainEvent
+import com.investpro.ui.theme.baseBackground
+import com.investpro.ui.theme.baseText
+import com.investpro.ui.theme.blue
 import java.io.File
 import java.io.IOException
 
@@ -87,7 +88,7 @@ fun WebViewScreen(
         topBar = {
             TopAppBar(
                 colors = TopAppBarDefaults.smallTopAppBarColors(
-                    containerColor = white
+                    containerColor = baseBackground
                 ),
                 title = {
                     Row(
@@ -99,17 +100,17 @@ fun WebViewScreen(
                             onEvent(MainEvent.Reconnect)
                         }) {
                             Icon(
-                                imageVector = ImageVector.vectorResource(id = R.drawable.baseline_arrow_back_24),
-                                tint = secondText,
+                                imageVector = ImageVector.vectorResource(id = R.drawable.arrow_left),
+                                tint = blue,
                                 contentDescription = ""
                             )
                         }
-                        Spacer(modifier = modifier.width(15.dp))
+                        Spacer(modifier = modifier.width(8.dp))
                         Text(
-                            color = secondText,
-                            fontStyle = FontStyle(R.font.montserrat),
-                            fontSize = 16.sp,
-                            fontWeight = FontWeight(500),
+                            color = baseText,
+                            fontStyle = FontStyle(R.font.poppins),
+                            fontSize = 20.sp,
+                            fontWeight = FontWeight(600),
                             text = offerName
                         )
                     }

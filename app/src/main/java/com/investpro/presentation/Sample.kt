@@ -1,4 +1,4 @@
-package com.budgetwise.financial.presentation
+package com.investpro.presentation
 
 import android.os.Build
 import android.widget.Toast
@@ -10,11 +10,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.budgetwise.financial.presentation.ConnectScreen
 import com.investpro.domain.model.StatusApplication
 import com.investpro.domain.model.TypeCard
 import com.investpro.domain.model.basedto.BaseState
 import com.budgetwise.financial.presentation.MainEvent.OnChangeBaseState
 import com.budgetwise.financial.presentation.MainEvent.OnChangeStatusApplication
+import com.budgetwise.financial.presentation.MainViewModel
+import com.budgetwise.financial.presentation.OfferScreen
 
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
 @Composable

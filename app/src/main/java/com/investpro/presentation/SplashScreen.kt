@@ -1,4 +1,4 @@
-package com.budgetwise.financial.presentation
+package com.investpro.presentation
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -13,8 +13,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.budgetwise.financial.R
-import com.budgetwise.financial.ui.theme.blue
+import com.investpro.R
+import com.investpro.ui.theme.blue
 
 @Preview
 @Composable

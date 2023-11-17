@@ -1,4 +1,4 @@
-package com.budgetwise.financial.presentation
+package com.investpro.presentation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -9,8 +9,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.budgetwise.financial.ui.theme.baseBackground
-import com.budgetwise.financial.ui.theme.blue
+import com.investpro.ui.theme.baseBackground
+import com.investpro.ui.theme.blue
 
 @Composable
 fun LoadingScreen(

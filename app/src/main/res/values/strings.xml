@@ -16,5 +16,5 @@
     //No Internet
     <string name="not_connect">Проблемы с подключением</string>
     <string name="try_internet">Проверьте подключение к Интернету и\nповторите попытку.</string>
-    <string name="reconnect">Попробовать еще раз</string>
+    <string name="reconnect">Переподключиться</string>
 </resources>

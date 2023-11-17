@@ -1,4 +1,4 @@
-package com.budgetwise.financial.presentation
+package com.investpro.presentation
 
 import android.content.Context
 import android.content.Intent
@@ -33,7 +33,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.FileProvider
-import com.budgetwise.financial.ui.theme.baseBackground
+import com.budgetwise.financial.presentation.MainEvent
+import com.investpro.ui.theme.baseBackground
 import java.io.File
 import java.io.IOException
 

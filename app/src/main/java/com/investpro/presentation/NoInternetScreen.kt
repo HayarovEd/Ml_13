@@ -1,6 +1,5 @@
-package com.budgetwise.financial.presentation
+package com.investpro.presentation
 
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -15,7 +14,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -31,11 +29,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.budgetwise.financial.R
+import com.investpro.R
+import com.budgetwise.financial.presentation.MainEvent
 import com.budgetwise.financial.presentation.MainEvent.Reconnect
-import com.budgetwise.financial.ui.theme.blue
-import com.budgetwise.financial.ui.theme.thirdText
-import com.budgetwise.financial.ui.theme.white
+import com.investpro.ui.theme.baseBackground
+import com.investpro.ui.theme.blue
+import com.investpro.ui.theme.grey
 
 @Composable
 fun NoInternetScreen(
@@ -45,34 +44,34 @@ fun NoInternetScreen(
     Box (
         modifier = modifier
             .fillMaxSize()
-            .background(color = white)
-            .padding(15.dp)
+            .background(color = baseBackground)
+            .padding(24.dp)
     ) {
         Column (
             modifier = modifier.align(alignment = Alignment.Center),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Image(
-                modifier = modifier.size(160.dp),
+                modifier = modifier.size(110.dp),
                 painter = painterResource(
                 id = R.drawable.no_connection),
                 contentDescription = "")
-            Spacer(modifier = modifier.height(30.dp))
+            Spacer(modifier = modifier.height(47.dp))
             Text(
                 text = stringResource(id = R.string.not_connect),
                 fontSize = 20.sp,
                 fontWeight = FontWeight(600),
-                fontStyle = FontStyle(R.font.montserrat),
+                fontStyle = FontStyle(R.font.poppins),
                 color = blue,
                 textAlign = TextAlign.Center
             )
-            Spacer(modifier = modifier.height(15.dp))
+            Spacer(modifier = modifier.height(1.dp))
             Text(
                 text = stringResource(id = R.string.try_internet),
                 fontSize = 14.sp,
                 fontWeight = FontWeight(500),
-                fontStyle = FontStyle(R.font.montserrat),
-                color = thirdText,
+                fontStyle = FontStyle(R.font.poppins),
+                color = grey,
                 textAlign = TextAlign.Center
             )
             /*Spacer(modifier = modifier.height(64.dp))
@@ -103,25 +102,25 @@ fun NoInternetScreen(
             modifier = modifier
                 .fillMaxWidth()
                 .align(alignment = Alignment.BottomCenter),
-            shape = RoundedCornerShape(10.dp),
+            shape = RoundedCornerShape(5.dp),
             /*border = BorderStroke(
                 width = 1.dp,
                 color = green
             ),*/
             contentPadding = PaddingValues(
-                vertical = 12.dp
+                vertical = 16.dp
             ),
             colors = ButtonDefaults.outlinedButtonColors(
                 containerColor = blue,
-                contentColor = white,
+                contentColor = baseBackground,
             ),
             onClick = { onEvent(Reconnect) }
         ) {
             Text(
                 text = stringResource(id = R.string.reconnect),
                 style = TextStyle(
-                    fontSize = 15.sp,
-                    fontFamily = FontFamily(Font(R.font.montserrat)),
+                    fontSize = 20.sp,
+                    fontFamily = FontFamily(Font(R.font.poppins)),
                     fontWeight = FontWeight(600),
                 )
             )

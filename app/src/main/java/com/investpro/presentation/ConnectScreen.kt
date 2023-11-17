@@ -38,6 +38,7 @@ import com.investpro.domain.model.basedto.CardsInstallment
 import com.budgetwise.financial.ui.theme.blue
 import com.budgetwise.financial.ui.theme.grey
 import com.budgetwise.financial.ui.theme.white
+import com.investpro.presentation.WebViewScreenPrimary
 
 
 @OptIn(ExperimentalMaterial3Api::class)

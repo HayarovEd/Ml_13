@@ -22,7 +22,6 @@ import com.investpro.data.LINK
 import com.investpro.data.SHARED_APPSFLYER_INSTANCE_ID
 import com.investpro.data.SHARED_DATA
 import com.budgetwise.financial.presentation.MainViewModel
-import com.budgetwise.financial.presentation.Sample
 import com.my.tracker.MyTracker
 import dagger.hilt.android.AndroidEntryPoint
 
