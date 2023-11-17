@@ -31,6 +31,8 @@ import com.investpro.domain.model.basedto.CardsInstallment
 import com.budgetwise.financial.ui.theme.baseText
 import com.budgetwise.financial.ui.theme.grey
 import com.budgetwise.financial.ui.theme.white
+import com.investpro.presentation.RowCard
+import com.investpro.presentation.RowData
 
 @Composable
 fun ItemInstallmentCard(

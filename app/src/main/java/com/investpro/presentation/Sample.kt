@@ -17,7 +17,6 @@ import com.investpro.domain.model.basedto.BaseState
 import com.budgetwise.financial.presentation.MainEvent.OnChangeBaseState
 import com.budgetwise.financial.presentation.MainEvent.OnChangeStatusApplication
 import com.budgetwise.financial.presentation.MainViewModel
-import com.budgetwise.financial.presentation.OfferScreen
 
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
 @Composable
