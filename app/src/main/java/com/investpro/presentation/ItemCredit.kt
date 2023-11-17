@@ -1,5 +1,5 @@
 
-package com.budgetwise.financial.presentation
+package com.investpro.presentation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Divider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -22,17 +21,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import com.budgetwise.financial.R
+import com.investpro.R
+import com.budgetwise.financial.presentation.MainEvent
 import com.investpro.data.VALUE_ONE
 import com.investpro.domain.model.ElementOffer
 import com.investpro.domain.model.StatusApplication
 import com.investpro.domain.model.basedto.BaseState
 import com.investpro.domain.model.basedto.Credit
-import com.budgetwise.financial.ui.theme.baseText
-import com.budgetwise.financial.ui.theme.grey
-import com.budgetwise.financial.ui.theme.white
-import com.investpro.presentation.RowCard
-import com.investpro.presentation.RowData
+import com.investpro.ui.theme.baseText
+import com.investpro.ui.theme.grey
+import com.investpro.ui.theme.lightGrey
 
 @Composable
 fun ItemCredit(
@@ -48,11 +46,12 @@ fun ItemCredit(
                 elevation = 20.dp,
                 spotColor = grey,
                 ambientColor = grey,
-                shape = RoundedCornerShape(16.dp))
+                shape = RoundedCornerShape(20.dp)
+            )
             //.border(width = 3.dp, color = grey, shape = RoundedCornerShape(15.dp))
             .clip(shape = RoundedCornerShape(16.dp))
-            .background(color = white)
-            .padding(13.dp)
+            .background(color = lightGrey)
+            .padding(16.dp)
     ) {
         AsyncImage(
             modifier = modifier
@@ -89,11 +88,11 @@ fun ItemCredit(
             contentScale = ContentScale.FillWidth,
             contentDescription = ""
         )
-        Spacer(modifier = modifier.height(20.dp))
+        Spacer(modifier = modifier.height(15.dp))
         Text(
             color = baseText,
-            fontStyle = FontStyle(R.font.montserrat),
-            fontSize = 15.sp,
+            fontStyle = FontStyle(R.font.poppins),
+            fontSize = 17.sp,
             fontWeight = FontWeight(600),
             text = credit.name
         )
@@ -113,17 +112,17 @@ fun ItemCredit(
                 rang = credit.score
             )
         }*/
-        Spacer(modifier = modifier.height(13.dp))
+        Spacer(modifier = modifier.height(19.dp))
         RowData(
             title = stringResource(id = R.string.amount),
             content = credit.summPrefix +" " + credit.summMin +" " + credit.summMid +" " + credit.summMax +" " + credit.summPostfix
         )
         if (credit.hidePercentFields == VALUE_ONE) {
             //Spacer(modifier = modifier.height(8.dp))
-            Divider(
+            /*Divider(
                 thickness = 1.dp,
                 color = grey
-            )
+            )*/
             RowData(
                 title = stringResource(id = R.string.bet),
                 content = credit.percentPrefix +" " + credit.percent +" " + credit.percentPostfix
@@ -131,16 +130,16 @@ fun ItemCredit(
         }
         if (credit.hideTermFields == VALUE_ONE) {
             //Spacer(modifier = modifier.height(8.dp))
-            Divider(
+            /*Divider(
                 thickness = 1.dp,
                 color = grey
-            )
+            )*/
             RowData(
                 title = stringResource(id = R.string.term),
                 content = credit.termPrefix +" "+ credit.termMin +" " + credit.termMid +" " + credit.termMax +" " + credit.termPostfix
             )
         }
-        Spacer(modifier = modifier.height(10.dp))
+        Spacer(modifier = modifier.height(14.dp))
         RowCard(
             showVisa = credit.showVisa,
             showMaster = credit.showMastercard,
@@ -149,7 +148,7 @@ fun ItemCredit(
             showQivi = credit.showQiwi,
             showCache = credit.showCash
         )
-        Spacer(modifier = modifier.height(13.dp))
+        Spacer(modifier = modifier.height(14.dp))
         RowButtons(
             titleOffer = credit.orderButtonText,
             onEvent = onEvent,

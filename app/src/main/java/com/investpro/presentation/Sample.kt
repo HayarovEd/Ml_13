@@ -10,7 +10,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.budgetwise.financial.presentation.ConnectScreen
 import com.investpro.domain.model.StatusApplication
 import com.investpro.domain.model.TypeCard
 import com.investpro.domain.model.basedto.BaseState

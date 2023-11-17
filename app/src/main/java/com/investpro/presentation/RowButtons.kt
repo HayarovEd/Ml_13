@@ -1,4 +1,4 @@
-package com.budgetwise.financial.presentation
+package com.investpro.presentation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -27,12 +27,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.budgetwise.financial.R
+import com.investpro.R
+import com.budgetwise.financial.presentation.MainEvent
 import com.investpro.domain.model.ElementOffer
 import com.investpro.domain.model.StatusApplication
 import com.investpro.domain.model.basedto.BaseState
-import com.budgetwise.financial.ui.theme.blue
-import com.budgetwise.financial.ui.theme.white
+import com.investpro.ui.theme.baseBackground
+import com.investpro.ui.theme.blue
+import com.investpro.ui.theme.lightGrey
 
 @Composable
 fun RowButtons(
@@ -65,9 +67,9 @@ fun RowButtons(
         Box(
             modifier = modifier
                 .weight(1f)
-                .border(width = 2.dp, color = blue, shape = RoundedCornerShape(10.dp))
-                .clip(shape = RoundedCornerShape(10.dp))
-                .background(color = white)
+                .border(width = 2.dp, color = blue, shape = RoundedCornerShape(5.dp))
+                .clip(shape = RoundedCornerShape(5.dp))
+                .background(color = lightGrey)
                 .clickable(onClick = {
                     onEvent(
                         MainEvent.OnChangeStatusApplication(
@@ -96,11 +98,11 @@ fun RowButtons(
                         )
                     )
                 })
-                .padding(vertical = 11.dp)
+                .padding(vertical = 16.dp)
         ) {
             Icon(
                 modifier = modifier.align(alignment = Alignment.Center),
-                imageVector = ImageVector.vectorResource(id = R.drawable.baseline_more_horiz_28),
+                imageVector = ImageVector.vectorResource(id = R.drawable.baseline_more_vert_32),
                 tint = blue,
                 contentDescription = ""
             )
@@ -109,7 +111,7 @@ fun RowButtons(
         Box(
             modifier = modifier
                 .weight(3f)
-                .clip(shape = RoundedCornerShape(10.dp))
+                .clip(shape = RoundedCornerShape(5.dp))
                 .background(color = blue)
                 .clickable(onClick = {
                     onEvent(
@@ -119,17 +121,17 @@ fun RowButtons(
                         )
                     )
                 })
-                .padding(vertical = 17.dp, horizontal = 16.dp)
+                .padding(vertical = 16.dp /*horizontal = 16.dp*/)
         ) {
             Text(
                 modifier = modifier.fillMaxWidth(),
                 text = stringResource(id = R.string.checkout),
                 style = TextStyle(
-                    fontSize = 15.sp,
-                    fontFamily = FontFamily(Font(R.font.montserrat)),
+                    fontSize = 20.sp,
+                    fontFamily = FontFamily(Font(R.font.poppins)),
                     fontWeight = FontWeight(600),
                 ),
-                color = white,
+                color = baseBackground,
                 textAlign = TextAlign.Center
             )
         }

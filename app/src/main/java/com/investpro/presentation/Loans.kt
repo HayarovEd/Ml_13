@@ -1,5 +1,5 @@
 
-package com.budgetwise.financial.presentation
+package com.investpro.presentation
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.background
@@ -15,9 +15,10 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.budgetwise.financial.presentation.MainEvent
 import com.investpro.domain.model.basedto.BaseState
 import com.investpro.domain.model.basedto.Loan
-import com.budgetwise.financial.ui.theme.baseBackground
+import com.investpro.ui.theme.baseBackground
 
 @SuppressLint("CoroutineCreationDuringComposition")
 @Composable

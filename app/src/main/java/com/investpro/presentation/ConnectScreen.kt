@@ -1,4 +1,4 @@
-package com.budgetwise.financial.presentation
+package com.investpro.presentation
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -14,6 +15,8 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -23,9 +26,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.budgetwise.financial.R
-import com.budgetwise.financial.R.string
+import com.investpro.R
+import com.investpro.R.string
+import com.investpro.R.drawable
+import com.budgetwise.financial.presentation.MainEvent
 import com.investpro.data.VALUE_ONE
 import com.investpro.domain.model.basedto.BaseDto
 import com.investpro.domain.model.basedto.BaseState
@@ -35,10 +41,10 @@ import com.investpro.domain.model.basedto.BaseState.Loans
 import com.investpro.domain.model.basedto.CardsCredit
 import com.investpro.domain.model.basedto.CardsDebit
 import com.investpro.domain.model.basedto.CardsInstallment
-import com.budgetwise.financial.ui.theme.blue
-import com.budgetwise.financial.ui.theme.grey
-import com.budgetwise.financial.ui.theme.white
-import com.investpro.presentation.WebViewScreenPrimary
+import com.investpro.ui.theme.baseBackground
+import com.investpro.ui.theme.baseText
+import com.investpro.ui.theme.blue
+import com.investpro.ui.theme.grey
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -66,46 +72,46 @@ fun ConnectScreen(
         is Cards -> stringResource(id = string.cards)
         Credits -> stringResource(id = string.credits)
         Loans -> stringResource(id = string.loans)
-        is BaseState.WebPrimary -> db.appConfig.namePrimary?: ""
+        is BaseState.WebPrimary -> db.appConfig.namePrimary ?: ""
     }
     Scaffold(
         modifier = modifier
             .fillMaxSize(),
-        /*topBar = {
+        topBar = {
             TopAppBar(
                 title = {
                     Row(
                         modifier = modifier
                             .fillMaxWidth()
-                            .padding(horizontal = 20.dp),
+                            .padding(horizontal = 24.dp),
                         horizontalArrangement = Arrangement.SpaceBetween,
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Text(
-                            color = white,
-                            fontStyle = FontStyle(R.font.gotham),
-                            fontSize = 20.sp,
-                            fontWeight = FontWeight(400),
+                            color = baseText,
+                            fontStyle = FontStyle(R.font.poppins),
+                            fontSize = 22.sp,
+                            fontWeight = FontWeight(600),
                             text = title
                         )
-                        *//*IconButton(onClick = onClickRules) {
-                            Icon(
-                                imageVector = ImageVector.vectorResource(id = R.drawable.info),
-                                tint = black,
-                                contentDescription = "")
-                        }*//*
+                        /* IconButton(onClick = onClickRules) {
+                             Icon(
+                                 imageVector = ImageVector.vectorResource(id = R.drawable.info),
+                                 tint = black,
+                                 contentDescription = "")
+                         }*/
                     }
                 },
                 colors = TopAppBarDefaults.smallTopAppBarColors(
                     containerColor = baseBackground
                 )
             )
-        },*/
+        },
         bottomBar = {
             BottomAppBar(
-                containerColor = white,
+                containerColor = baseBackground,
                 modifier = modifier
-                    //.clip(shape = RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp))
+                //.clip(shape = RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp))
             ) {
                 Row(
                     modifier = modifier
@@ -115,15 +121,18 @@ fun ConnectScreen(
                     if (!db.appConfig.showedIconPrimary.isNullOrEmpty()
                         && db.appConfig.showedIconPrimary == VALUE_ONE
                         && !db.appConfig.namePrimary.isNullOrEmpty()
-                        && !db.appConfig.urlPrimary.isNullOrEmpty()) {
+                        && !db.appConfig.urlPrimary.isNullOrEmpty()
+                    ) {
                         Column(
                             horizontalAlignment = Alignment.CenterHorizontally
                         ) {
                             IconButton(
-                                onClick = onClickPrimary) {
+                                onClick = onClickPrimary
+                            ) {
                                 Image(
                                     imageVector = ImageVector.vectorResource(drawable.money_1),
-                                    contentDescription = "")
+                                    contentDescription = ""
+                                )
                             }
                             /*Text(
                                 color = if (baseState is Loans) green else lightGray,
@@ -198,12 +207,14 @@ fun ConnectScreen(
                     loanLazyState = loanLazyState
                 )
             }
+
             is BaseState.WebPrimary -> {
                 WebViewScreenPrimary(
-                    url = db.appConfig.urlPrimary?:"",
-                    offerName = db.appConfig.namePrimary?:"",
+                    url = db.appConfig.urlPrimary ?: "",
+                    offerName = db.appConfig.namePrimary ?: "",
                     valuePaddings = valuePaddings,
-                    onEvent = onEvent)
+                    onEvent = onEvent
+                )
             }
         }
     }
@@ -223,12 +234,13 @@ fun ItemBottomBar(
             colors = IconButtonDefaults.iconButtonColors(
                 contentColor = color
             ),
-            onClick = onClick) {
+            onClick = onClick
+        ) {
             Icon(imageVector = icon, contentDescription = "")
         }
         Text(
             color = color,
-            fontStyle = FontStyle(R.font.montserrat),
+            fontStyle = FontStyle(R.font.gotham),
             fontSize = 11.sp,
             fontWeight = FontWeight(700),
             text = content
